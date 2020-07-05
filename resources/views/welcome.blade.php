@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/materialize.css') }}">
 
         <!-- Styles -->
         <style>
@@ -96,5 +97,7 @@
                 </div>
             </div>
         </div>
+        <script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
+        <script src="{{ asset('js/materialize.min.js') }}"></script>
     </body>
 </html>
