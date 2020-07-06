@@ -4,7 +4,7 @@
 @include('layouts._site._slides')
 
 <div class="container">
-    <h1>Home</h1>
+    @include('layouts._site._lista_imoveis')
 </div>
 
 @endsection
