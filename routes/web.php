@@ -33,3 +33,10 @@ Route::get('/contato', [
         return view('site.contato');
     } 
 ]);
+
+Route::get('/imovel/{id}/{titulo?}', [
+    'as' => 'site.imovel',
+    function(){
+        return view('site.imovel');
+    }
+]);
