@@ -8,25 +8,16 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="{{ asset('css/materialize.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     </head>
     <body>
-        <nav>
-            <div class="nav-wrapper blue">
-                <div class="container">
-                    <a href="#!" class="brand-logo">Logo</a>
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="#">Home</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        @include('layouts._admin._nav')
 
-        <ul class="sidenav" id="mobile-demo">
-            <li><a href="#">Home</a></li>
-        </ul>
+        <main>
+            @yield('content')
+        </main>
 
-        @yield('content')
+        @include('layouts._admin._footer')
         
         <script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
         <script src="{{ asset('js/materialize.min.js') }}"></script>

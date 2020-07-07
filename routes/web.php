@@ -40,3 +40,11 @@ Route::get('/imovel/{id}/{titulo?}', [
         return view('site.imovel');
     }
 ]);
+
+Route::get('/admin/login', [
+    'as' => 'admin.login',
+    function(){
+        return view('admin.login.index');
+    }
+]);
+
