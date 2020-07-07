@@ -1,6 +1,8 @@
 <div class="row section">
     <h3 align="center">Imoveis</h3>
     <div class="divider"></div>
+    <br>
+    @include('layouts._site._filtros')
 </div>
 <div class="row section">
     <div class="col s12 m3">
