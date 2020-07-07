@@ -66,4 +66,9 @@ Route::group(['middleware' => 'auth'], function() {
         'as' => 'admin.login.sair',
         'uses' => 'Admin\UsuarioController@sair'
     ]);
+
+    Route::get('/admin/usuarios', [
+        'as' => 'admin.usuarios',
+        'uses' => 'Admin\UsuarioController@index'
+    ]);
 });

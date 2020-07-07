@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -39,5 +40,11 @@ class UsuarioController extends Controller
     {
         Auth::logout();
         return redirect()->route('admin.login');
+    }
+
+    public function index()
+    {
+        $usuarios = User::all();
+        return view('admin.usuarios.index', compact('usuarios'));
     }
 }

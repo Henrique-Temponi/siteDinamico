@@ -7,6 +7,9 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/materialize.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     </head>
