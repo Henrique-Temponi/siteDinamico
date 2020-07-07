@@ -91,4 +91,9 @@ Route::group(['middleware' => 'auth'], function() {
         'as' => 'admin.usuarios.atualizar',
         'uses' => 'Admin\UsuarioController@atualizar'
     ]);
+
+    Route::get('/admin/usuarios/deletar/{id}', [
+        'as' => 'admin.usuario.deletar',
+        'uses' => 'Admin\UsuarioController@deletar'
+    ]);
 });
