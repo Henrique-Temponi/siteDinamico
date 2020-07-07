@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class UsuarioController extends Controller
 {
@@ -18,9 +19,19 @@ class UsuarioController extends Controller
             'password' => $dados['password']
         ])) {
 
+            Session::flash('mensagem', [
+                'msg' => 'login realizado com sucesso',
+                'class' => 'green white-text'
+            ]);
+
             return redirect()->route('admin.principal');
         }
 
-        return redirect()->route('site.home');
+        Session::flash('mensagem', [
+            'msg' => 'Erro confira seus dados',
+            'class' => 'red white-text'
+        ]);
+
+        return redirect()->route('admin.login');
     }
 }
