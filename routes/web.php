@@ -48,3 +48,14 @@ Route::get('/admin/login', [
     }
 ]);
 
+Route::post('/admin/login', [
+    'as' => 'admin.login',
+    'uses' => 'Admin\UsuarioController@login'
+]);
+
+Route::get('/admin', [
+    'as' => 'admin.principal',
+    function() {
+        return view('admin.principal.index');
+    }
+]);
