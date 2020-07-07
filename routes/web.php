@@ -61,5 +61,9 @@ Route::group(['middleware' => 'auth'], function() {
             return view('admin.principal.index');
         }
     ]);
-    
+
+    Route::get('/admin/login/sair', [
+        'as' => 'admin.login.sair',
+        'uses' => 'Admin\UsuarioController@sair'
+    ]);
 });
