@@ -53,9 +53,13 @@ Route::post('/admin/login', [
     'uses' => 'Admin\UsuarioController@login'
 ]);
 
-Route::get('/admin', [
-    'as' => 'admin.principal',
-    function() {
-        return view('admin.principal.index');
-    }
-]);
+Route::group(['middleware' => 'auth'], function() {
+
+    Route::get('/admin', [
+        'as' => 'admin.principal',
+        function() {
+            return view('admin.principal.index');
+        }
+    ]);
+    
+});
