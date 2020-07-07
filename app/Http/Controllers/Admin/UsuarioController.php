@@ -71,4 +71,33 @@ class UsuarioController extends Controller
 
         return redirect()->route('admin.usuarios');
     }
+
+    public function editar($id)
+    {
+        $usuario = User::find($id);
+        return view('admin.usuarios.editar', compact('usuario'));
+    }
+
+    public function atualizar(Request $request, $id)
+    {
+        $usuario = User::find($id);
+
+        $dados = $request->all();
+
+        if(isset($dados['password']) && strlen($dados['password']) >= 3 ){
+            $dados['password'] = bcrypt($dados['password']);
+        }
+        else {
+            unset($dados['password']);
+        }
+
+        $usuario->update($dados);
+
+        Session::flash('mensagem', [
+            'msg' => 'Usuario atualizado com sucesso',
+            'class' => 'green white-text'
+        ]);
+
+        return redirect()->route('admin.usuarios');
+    }
 }
