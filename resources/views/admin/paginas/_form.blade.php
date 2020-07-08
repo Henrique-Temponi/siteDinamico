@@ -21,7 +21,7 @@
 @endif
 
 <div class="input-field">
-    <textarea class="materialize-textarea" id="textarea" value="{{
+    <textarea class="materialize-textarea" name="texto" id="textarea" value="{{
             isset($pagina->texto ) ? $pagina->texto : '' 
         }}"></textarea>
     <Label for="textarea">Texto: </Label>
@@ -39,7 +39,7 @@
     </div>
     <div class="col m6 s12">
         @if(isset($pagina->imagem))
-            <img width="120" src="{{ asset('$pagina->imagem') }}">
+            <img width="120" src="{{ asset($pagina->imagem) }}">
         @endif
     </div>
 </div>

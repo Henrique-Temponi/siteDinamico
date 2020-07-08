@@ -18,7 +18,10 @@
     </div>
 
     <div class="row">
-        <form action="{{ route('admin.paginas.atualizar', $pagina->id) }}" method="POST">
+        <form action="{{ route('admin.paginas.atualizar', $pagina->id) }}" 
+            method="POST" 
+            enctype="multipart/form-data">
+            
             {{csrf_field() }}
             <input type="hidden" name="_method" value="put">
             @include('admin.paginas._form')

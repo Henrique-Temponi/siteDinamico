@@ -105,7 +105,7 @@ Route::group(['middleware' => 'auth'], function() {
         'uses' => 'Admin\PaginaController@editar'
     ]);
     
-    Route::get('/admin/paginas/atualizar/{id}', [
+    Route::put('/admin/paginas/atualizar/{id}', [
         'as' => 'admin.paginas.atualizar',
         'uses' => 'Admin\PaginaController@atualizar'
     ]);
