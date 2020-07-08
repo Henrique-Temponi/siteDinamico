@@ -22,9 +22,7 @@ Route::get('/', [
 
 Route::get('/sobre', [
     'as' => 'site.sobre',
-    function(){
-        return view('site.sobre');
-    } 
+    'uses' => 'Site\PaginaController@sobre'
 ]);
  
 Route::get('/contato', [
