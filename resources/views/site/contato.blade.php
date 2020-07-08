@@ -9,10 +9,21 @@
     </div>
     <div class="row section">
         <div class="col s12 m7">
-            <img class="responsive-img" src="{{ asset('img/modelo_img_home.jpg') }}">
+            @if(isset($pagina->mapa))
+                <div class="video-container">
+                    {!! $pagina->mapa !!}
+                </div>
+            @else
+                <img class="responsive-img" src="{{ asset($pagina->imagem) }}">
+            @endif
         </div>
         <div class="col s12 m5">
-            <form class="col s12" action="">
+            <h4>{{ $pagina->titulo }}</h4>
+            <blockquote>
+                {{ $pagina->descricao }}
+            </blockquote>
+            <form class="col s12" action="{{ route('site.contato.enviar') }}" method="POST">
+                {{ csrf_field() }}
                 <div class="input-field">
                     <input type="text" name="name" class="validate" id="name">
                     <label for="name">Nome</label>
@@ -25,7 +36,7 @@
                     <textarea name="descricao" id="descricao" class="materialize-textarea"></textarea>
                     <label for="descricao">Descricao</label>
                 </div>
-                <button class="btn blue">Enviar</button>
+                <button type="submit" class="btn blue">Enviar</button>
             </form>
         </div>
     </div>

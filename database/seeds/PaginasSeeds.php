@@ -28,5 +28,23 @@ class PaginasSeeds extends Seeder
         $paginaSobre->mapa = '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14028.694058704315!2d-81.4678193!3d28.4743207!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1adc62268ae9b19!2sUniversal%20Orlando%20Resort!5e0!3m2!1spt-BR!2sbr!4v1594211516185!5m2!1spt-BR!2sbr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>';
         $paginaSobre->tipo = "Sobre";
         $paginaSobre->save();
+
+
+        $existe = Pagina::where('tipo', '=', 'Contato')->count();
+
+        if($existe) {
+            $paginaContato = Pagina::where('tipo', '=', 'Contato')->first();
+        }
+        else {
+            $paginaContato = new Pagina();
+        }
+
+        $paginaContato->titulo = "Entre em contato";
+        $paginaContato->descricao = "preencha o form";
+        $paginaContato->texto = "Contato";
+        $paginaContato->imagem = "site/img/modelo";
+        $paginaContato->email = "dev@dev.com";
+        $paginaContato->tipo = "Contato";
+        $paginaContato->save();
     }
 }
