@@ -94,4 +94,19 @@ Route::group(['middleware' => 'auth'], function() {
         'as' => 'admin.usuario.deletar',
         'uses' => 'Admin\UsuarioController@deletar'
     ]);
+
+    Route::get('/admin/paginas', [
+        'as' => 'admin.paginas',
+        'uses' => 'Admin\PaginaController@index'
+    ]);
+
+    Route::get('/admin/paginas/editar/{id}', [
+        'as' => 'admin.paginas.editar',
+        'uses' => 'Admin\PaginaController@editar'
+    ]);
+    
+    Route::get('/admin/paginas/atualizar/{id}', [
+        'as' => 'admin.paginas.atualizar',
+        'uses' => 'Admin\PaginaController@atualizar'
+    ]);
 });
