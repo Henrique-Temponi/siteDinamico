@@ -17,8 +17,9 @@ class PaginaController extends Controller
 
     public function editar($id)
     {
-        $paginas = Pagina::find($id)->get();
-        return view('admin.paginas.editar', compact('paginas'));
+        $pagina = Pagina::find($id);
+        // dd($pagina);
+        return view('admin.paginas.editar', compact('pagina'));
     }
 
     public function atualizar(Request $request, $id)
