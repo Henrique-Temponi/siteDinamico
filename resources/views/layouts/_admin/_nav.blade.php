@@ -21,6 +21,7 @@
                         <li><a href="{{ route('admin.usuarios') }}">Usuarios</a></li>
                         <li><a href="{{ route('admin.paginas') }}">Paginas</a></li>
                         <li><a href="{{ route('admin.tipos') }}">Tipos</a></li>
+                        <li><a href="{{ route('admin.cidades') }}">Cidades</a></li>
                     </ul>
                     
                     <li><a href="{{ route('admin.login.sair') }}">Sair</a></li>

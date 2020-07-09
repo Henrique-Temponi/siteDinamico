@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Pagina;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use PaginasSeeds;
 
 class PaginaController extends Controller
 {

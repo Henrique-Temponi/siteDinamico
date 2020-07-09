@@ -143,4 +143,34 @@ Route::group(['middleware' => 'auth'], function() {
         'as' => 'admin.tipos.deletar',
         'uses' => 'Admin\TipoController@deletar'
     ]);
+
+    Route::get('/admin/cidades', [
+        'as' => 'admin.cidades',
+        'uses' => 'Admin\CidadeController@index'
+    ]);
+
+    Route::get('/admin/cidades/adicionar', [
+        'as' => 'admin.cidades.adicionar',
+        'uses' => 'Admin\CidadeController@adicionar'
+    ]);
+
+    Route::post('/admin/cidades/salvar', [
+        'as' => 'admin.cidades.salvar',
+        'uses' => 'Admin\CidadeController@salvar'
+    ]);
+
+    Route::get('/admin/cidades/editar/{id}', [
+        'as' => 'admin.cidades.editar',
+        'uses' => 'Admin\CidadeController@editar'
+    ]);
+
+    Route::put('/admin/cidades/atualizar/{id}', [
+        'as' => 'admin.cidades.atualizar',
+        'uses' => 'Admin\CidadeController@atualizar'
+    ]);
+
+    Route::get('/admin/cidades/deletar/{id}', [
+        'as' => 'admin.cidades.deletar',
+        'uses' => 'Admin\CidadeController@deletar'
+    ]);
 });
