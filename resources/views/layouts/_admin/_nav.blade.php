@@ -20,6 +20,7 @@
                         <li><a href="#!">{{ Auth::user()->name }}</a></li>
                         <li><a href="{{ route('admin.usuarios') }}">Usuarios</a></li>
                         <li><a href="{{ route('admin.paginas') }}">Paginas</a></li>
+                        <li><a href="{{ route('admin.tipos') }}">Tipos</a></li>
                     </ul>
                     
                     <li><a href="{{ route('admin.login.sair') }}">Sair</a></li>
@@ -36,6 +37,9 @@
         <li><a href="{{ route('admin.login') }}">login</a></li>
     @else
         <li><a href="">{{ Auth::user()->name }}</a></li>
+        <li><a href="{{ route('admin.usuarios') }}">Usuarios</a></li>
+        <li><a href="{{ route('admin.paginas') }}">Paginas</a></li>
+        <li><a href="{{ route('admin.tipos') }}">Tipos</a></li>
         <li><a href="{{ route('admin.login.sair') }}">Sair</a></li>
     @endif
 </ul>
