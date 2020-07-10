@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Cidade;
 use App\Http\Controllers\Controller;
+use App\Imovel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -61,13 +62,28 @@ class CidadeController extends Controller
 
     public function deletar($id)
     {
+        if(Imovel::where('cidade_id', '=', $id)->count()){
+
+            $msg = "Nao e' possivel deletar essa cidade esses imoveis (";
+
+            $imoveis = Imovel::where('cidade_id', '=', $id)->get();
+
+            foreach ($imoveis as $imovel ) {
+                $msg .= "id: ".$imovel->id." ";
+            }
+
+            $msg .= ") estao relacionados";
+
+            Session::flash('mensagem', [
+                'msg' => $msg,
+                'class' => 'red white-text'
+            ]);
+    
+            return redirect()->route('admin.cidades');
+
+        }
+        
         Cidade::find($id)->delete();
 
-        Session::flash('mensagem', [
-            'msg' => 'Tipo deletado com sucesso',
-            'class' => 'green white-text'
-        ]);
-
-        return redirect()->route('admin.cidades');
     }
 }
