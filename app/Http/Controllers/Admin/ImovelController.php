@@ -77,6 +77,8 @@ class ImovelController extends Controller
 
     public function atualizar(Request $request, $id)
     {
+        // dd($request);
+
         $registro = Imovel::find($id);
 
         if (isset($request->mapa) && trim($request->mapa) != "") {
