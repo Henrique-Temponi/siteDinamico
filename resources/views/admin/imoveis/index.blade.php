@@ -36,15 +36,14 @@
                         <td>{{ $p->titulo }}</td>
                         <td>{{ $p->status }}</td>
                         <td>{{ $p->cidade->nome }}</td>
-                        <td>{{ $p->valor }}</td>
                         <td>R$ {{number_format($p->valor, 2, ",", ".")}}</td>
                         <td><img width="100" src="{{ asset($p->imagem) }}"></td>
-                        <td>{{ $p->publicado }}</td>
+                        <td>{{ $p->publicar }}</td>
                         <td>
-                            <a class="btn orange" href="{{ route('admin.cidades.editar', $p->id) }}">Editar</a>
+                            <a class="btn orange" href="{{ route('admin.imoveis.editar', $p->id) }}">Editar</a>
                             <a class="btn red" href="javascript:
                                 if(confirm('Deletar esse registro?')){
-                                    window.location.href = '{{ route('admin.cidades.deletar', $p->id) }}' 
+                                    window.location.href = '{{ route('admin.imoveis.deletar', $p->id) }}' 
                                 }">Deletar</a>
                         </td>
                     </tr>
@@ -53,7 +52,7 @@
         </table>
     </div>
     <div class="row">
-            <a class="btn green" href="{{ route('admin.cidades.adicionar') }}">Adicionar</a>
+            <a class="btn green" href="{{ route('admin.imoveis.adicionar') }}">Adicionar</a>
     </div>
 </div>
 
