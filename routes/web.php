@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [
     'as' => 'site.home',
-    function() {
-        return view('site.home');
-    }
+    'uses' => 'Site\HomeController@index'
 ]);
 
 Route::get('/sobre', [
@@ -38,9 +36,7 @@ Route::post('/contato/enviar', [
  
 Route::get('/imovel/{id}/{titulo?}', [
     'as' => 'site.imovel',
-    function(){
-        return view('site.imovel');
-    }
+    'uses' => 'Site\ImovelController@index'
 ]);
 
 Route::get('/admin/login', [
