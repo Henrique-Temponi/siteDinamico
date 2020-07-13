@@ -24,4 +24,9 @@ class Imovel extends Model
 
         return $this->belongsTo('App\Cidade', 'cidade_id');
     }
+
+    public function galeria() {
+
+        return $this->hasMany('App\Galeria', 'imovel_id');
+    }
 }
