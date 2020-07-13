@@ -231,6 +231,6 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/admin/galerias/deletar/{id}', [
         'as' => 'admin.galerias.deletar',
-        'uses' => 'Admin\ImovelController@deletar'
+        'uses' => 'Admin\GaleriaController@deletar'
     ]);
 });
