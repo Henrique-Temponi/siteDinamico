@@ -10,12 +10,6 @@
     }}">
     <Label for="descricao">descricao: </Label>
 </div>
-<div class="input-field row">
-    <input type="text" name="titulo" class="validate" id="titulo" value="{{
-        isset($registro->titulo ) ? $registro->titulo : '' 
-    }}">
-    <Label for="titulo">Titulo: </Label>
-</div>
 
 <div class="row">
     <div class="file-field input-field">
@@ -72,8 +66,8 @@
 <div class="input-field col s12">
     <select name="cidade_id" id="cidade_id">
         @foreach($cidades as $cidade)
-            <option value="{{$cidade->id}}" {{ (isset($registro->id) && $registro->cidade_id == $cidade->id ? 'selected' : '')}}>
-                {{ $cidade->titulo }}
+            <option value="{{$cidade->id}}" {{ (isset($registro->id) && $registro->cidade_id == $cidade->id ? 'selected' : '')}}
+                >{{ $cidade->nome }}
             </option>
         @endforeach
     </select>
@@ -85,6 +79,13 @@
         isset($registro->dormitorios ) ? $registro->dormitorios : '' 
     }}">
     <Label for="dormitorios">dormitorios: </Label>
+</div>
+
+<div class="input-field col m12">
+    <input type="text" name="valor" class="validate" id="valor" value="{{
+        isset($registro->valor ) ? $registro->valor : '' 
+    }}">
+    <Label for="valor">Valor: </Label>
 </div>
 
 <div class="input-field col m12">

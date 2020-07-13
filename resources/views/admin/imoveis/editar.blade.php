@@ -11,7 +11,7 @@
             <div class="col s12">
                 <a href="{{ route('admin.principal') }}" class="breadcrumb">Incio</a>
                 <a href="{{ route('admin.imoveis') }}" class="breadcrumb">Lista de Imoveis</a>
-                <a class="breadcrumb">Editar Imoveis'</a>
+                <a class="breadcrumb">Editar Imoveis</a>
             </div>
             </div>
         </nav>
@@ -23,7 +23,7 @@
             
             {{csrf_field() }}
             <input type="hidden" name="_method" value="put">
-            @include('admin.cidades._form')
+            @include('admin.imoveis._form')
 
             <button class="btn yellow">atualizar</button>
 
