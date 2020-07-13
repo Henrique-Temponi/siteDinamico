@@ -55,7 +55,7 @@
 </div>
 
 
-<div class="input-field col m12">
+<div class="input-field col m12 ">
     <input type="text" name="enderec" class="validate" id="enderec" value="{{(isset($registro->endereco ) ? $registro->endereco : '' 
     )}}">
     <Label for="enderec">endereco: </Label>
