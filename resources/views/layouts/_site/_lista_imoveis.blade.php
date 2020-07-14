@@ -10,18 +10,22 @@
         <div class="col s12 m3">
             <div class="card">
                 <div class="card-image">
-                    <a href="#"><img src="{{ asset($imovel->imagem) }}" alt="Imagem"></a>
+                    <a href="{{ route('site.imovel', [$imovel->id, Str::slug($imovel->titulo, '_')]) }}"><img src="{{ asset($imovel->imagem) }}" alt="{{ $imovel->titulo }}"></a>
                 </div>
                 <div class="card-content">
                     <p><b class="deep-orange-text darken-1">{{ $imovel->status }}</b></p>
                     <p><b>{{ $imovel->titulo }}</b></p>
                     <p>{{ $imovel->descricao }}</p>
-                    <p>R$ {{ $imovel->valor }}</p>
+                    <p>R$ {{ number_format($imovel->valor, 2, ",", ".") }}</p>
                 </div>
                 <div class="card-action">
-                    <a href="#">Ver mais</a>
+                    <a href="{{ route('site.imovel', [$imovel->id, Str::slug($imovel->titulo, '_')]) }}">Ver mais</a>
                 </div>
             </div>
         </div>
     @endforeach
+</div>
+
+<div align="center" class="row">
+        {{ $imoveis->links() }}
 </div>

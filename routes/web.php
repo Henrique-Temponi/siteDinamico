@@ -36,7 +36,10 @@ Route::post('/contato/enviar', [
  
 Route::get('/imovel/{id}/{titulo?}', [
     'as' => 'site.imovel',
-    'uses' => 'Site\ImovelController@index'
+    function () {
+        return view('site.imovel');
+    }
+    // 'uses' => 'Site\ImovelController@index'
 ]);
 
 Route::get('/admin/login', [

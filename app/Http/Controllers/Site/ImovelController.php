@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 
 class ImovelController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        $imoveis = Imovel::all();
+        // dd($id);
 
-        return view('site.imovel', compact('imoveis'));
+        return view('site.imovel', $id);
     }
 }
