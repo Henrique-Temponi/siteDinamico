@@ -18,7 +18,8 @@
     </div>
 
     <div class="row">
-        <form action="{{ route('admin.imoveis.salvar') }}" method="POST">
+        <form action="{{ route('admin.imoveis.salvar') }}" method="POST"
+            enctype="multipart/form-data">
             {{csrf_field() }}
             @include('admin.imoveis._form')
 

@@ -36,7 +36,9 @@ class ImovelController extends Controller
         // $registro->estado = $dados['estado'];
         // $registro->sigla_estado = $dados['sigla_estado'];
 
-        $registro = new Cidade($request->all());
+        // dd($request);
+
+        $registro = new Imovel($request->all());
         $registro->vizualizacoes = 0;
         
         if (isset($request->mapa) && trim($request->mapa) != "") {

@@ -50,9 +50,8 @@
 
 
 <div class="input-field col m12 ">
-    <input type="text" name="enderec" class="validate" id="enderec" value="{{(isset($registro->endereco ) ? $registro->endereco : '' 
-    )}}">
-    <Label for="enderec">endereco: </Label>
+    <input type="text" name="endereco" class="validate" id="endereco" value="{{(isset($registro->endereco ) ? $registro->endereco : '')}}">
+    <Label for="endereco">endereco: </Label>
 </div>
 
 
@@ -89,10 +88,10 @@
 </div>
 
 <div class="input-field col m12">
-    <input type="text" name="datalhes" class="validate" id="datalhes" value="{{
-        isset($registro->datalhes ) ? $registro->datalhes : '' 
+    <input type="text" name="detalhes" class="validate" id="detalhes" value="{{
+        isset($registro->detalhes ) ? $registro->detalhes : '' 
     }}">
-    <Label for="datalhes">datalhes: </Label>
+    <Label for="detalhes">detalhes: </Label>
 </div>
 
 <div class="input-field col m12">
