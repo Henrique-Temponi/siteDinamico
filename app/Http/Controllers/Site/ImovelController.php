@@ -12,6 +12,10 @@ class ImovelController extends Controller
     {
         // dd($id);
 
-        return view('site.imovel', $id);
+        $imovel = Imovel::find(1);
+        $direcaoImagem = ['center-align', 'left-align', 'right-align'];
+
+
+        return view('site.imovel', compact('imovel', 'direcaoImagem'));
     }
 }

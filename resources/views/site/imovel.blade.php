@@ -8,31 +8,20 @@
         <div class="divider"></div>
     </div>
     <div class="row section">
+        @if($imovel->galeria()->count())
         <div class="col s12 m8">
             <div class="row">
                 <div class="slider">
                     <ul class="slides">
+                    @foreach($imovel->galeria as $imagem)
                         <li>
-                            <img src="{{ asset('img/') }}" alt="Imagem">
-                            <div class="caption center-align">
-                                <h3>Titulo da imagem</h3>
-                                <h5>Descricao</h5>
+                            <img src="{{ asset($imagem->imagem) }}" alt="Imagem">
+                            <div class="caption {{ $direcaoImagem[rand(0,2)] }}">
+                                <h3>{{ $imagem->titulo }}</h3>
+                                <h5>{{ $imagem->descricao }}</h5>
                             </div>
                         </li>
-                        <li>
-                            <img src="{{ asset('img/') }}" alt="Imagem">
-                            <div class="caption left-align">
-                                <h3>Titulo da imagem</h3>
-                                <h5>Descricao</h5>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="{{ asset('img/') }}" alt="Imagem">
-                            <div class="caption right-align">
-                                <h3>Titulo da imagem</h3>
-                                <h5>Descricao</h5>
-                            </div>
-                        </li>
+                    @endforeach
                     </ul>
                 </div>
             </div>
@@ -40,20 +29,34 @@
                 <button onclick="sliderPrev()" class="btn blue">Anterior</button>
                 <button onclick="sliderNext()" class="btn blue">Proxima</button>
             </div>
+            @else
+            <img src="{{ asset($imovel->imagem) }}" class="responsive-img">
+            @endif
         </div>
         <div class="col s12 m4">
-            <h4>Titulo do imovel</h4>
+            <h4>{{ $imovel->titulo }}</h4>
             <blockquote>
-                Descricao breve sobre o imovel.
+                {{ $imovel->descricao }}
             </blockquote>
-            <p><b>Codigo:</b> 234</p>
-            <p><b>Status:</b> Vende</p>
-            <p><b>tipo:</b> Alvenaria</p>
-            <p><b>Endereco:</b> Centro</p>
-            <p><b>Cep:</b> 81338464</p>
-            <p><b>Cidade</b> Rua. banana</p>
-            <p><b>Valor</b> R$ 20</p>
+            <p><b>Codigo:</b> {{ $imovel->id }}</p>
+            <p><b>Status:</b> {{ $imovel->status }}</p>
+            <p><b>tipo:</b> {{ $imovel->tipo->titulo }}</p>
+            <p><b>Endereco:</b> {{ $imovel->endereco }}</p>
+            <p><b>Cep:</b> {{ $imovel->cep }}</p>
+            <p><b>Cidade</b> {{ $imovel->cidade->nome }}</p>
+            <p><b>Valor</b> R$ {{ number_format($imovel->valor, 2, ",", ".")}}</p>
             <a class="btn deep-orange darken-1" href="{{ route('site.contato') }}">Entrar em contato</a>
+        </div>
+    </div>
+    <div class="row section">
+        <div class="col s12 m8">
+            <div class="video-container">
+                {!! $imovel->mapa !!}
+            </div>
+        </div>
+        <div class="col s12 m4">
+            <h4>Detalhes:</h4>
+            <p>{{ $imovel->Detalhes }}</p>
         </div>
     </div>
 </div>
