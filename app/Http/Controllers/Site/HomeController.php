@@ -13,7 +13,8 @@ class HomeController extends Controller
     {
         $imoveis = Imovel::orderBy('id', 'desc')->paginate(1);
         $slides = Slide::where('publicado', '=', 'sim')->orderBy('ordem')->get();
+        $direcaoImagem = ['center-align', 'left-align', 'right-align'];
 
-        return view('site.home', compact('imoveis'));
+        return view('site.home', compact('imoveis', 'slides','direcaoImagem'));
     }
 }
