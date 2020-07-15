@@ -122,7 +122,7 @@ class UsuarioController extends Controller
         return view('admin.usuarios.papel', compact('usuario', 'papel'));
     }
 
-    public function salarPapel(Request $request, $id)
+    public function salvarPapel(Request $request, $id)
     {
         $usuario = User::find($id);
         $papel = Papel::find($request->papel_id);

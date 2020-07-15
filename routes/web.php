@@ -106,7 +106,7 @@ Route::group(['middleware' => 'auth'], function() {
         'uses' => 'Admin\UsuarioController@papel'
     ]);
     
-    Route::get('/admin/usuarios/papel/salvar/{id}', [
+    Route::post('/admin/usuarios/papel/salvar/{id}', [
         'as' => 'admin.usuarios.papel.salvar',
         'uses' => 'Admin\UsuarioController@salvarPapel'
     ]);
