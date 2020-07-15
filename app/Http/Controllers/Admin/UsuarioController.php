@@ -146,7 +146,7 @@ class UsuarioController extends Controller
         $usuario = User::find($id);
         $papel = Papel::find($papel_id);
 
-        $usuario->adicionaPapel($papel);
+        $usuario->removePapel($papel);
 
         return redirect()->back();
     }

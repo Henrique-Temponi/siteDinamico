@@ -34,6 +34,7 @@
                         <td>
                             @if($p->nome != "admin")
                                 <a class="btn orange" href="{{ route('admin.papel.editar', $p->id) }}">Editar</a>
+                                <a class="btn purple" href="{{ route('admin.papel.permissao', $p->id) }}">Permissao</a>
                                 <a class="btn red" href="javascript:
                                     if(confirm('Deletar esse registro?')){
                                         window.location.href = '{{ route('admin.papel.deletar', $p->id) }}' 

@@ -12,7 +12,7 @@ class PermissaoSeeds extends Seeder
      */
     public function run()
     {
-        if(Permissao::where('nome', '=', 'usuario_listar')->count()){
+        if(!Permissao::where('nome', '=', 'usuario_listar')->count()){
             Permissao::create([
                 'nome' => 'usuario_listar',
                 'descricao' => 'Listar usuarios'
@@ -20,13 +20,13 @@ class PermissaoSeeds extends Seeder
         }
         else {
             $permissao = Permissao::where('nome', '=', 'usuario_listar')->first();
-            Permissao::upate([
+            $permissao->update([
                 'nome' => 'usuario_listar',
                 'descricao' => 'Listar usuarios'
             ]);
         }
 
-        if(Permissao::where('nome', '=', 'usuario_adicionar')->count()){
+        if(!Permissao::where('nome', '=', 'usuario_adicionar')->count()){
             Permissao::create([
                 'nome' => 'usuario_adicionar',
                 'descricao' => 'adicionar usuarios'
@@ -34,13 +34,13 @@ class PermissaoSeeds extends Seeder
         }
         else {
             $permissao = Permissao::where('nome', '=', 'usuario_adicionar')->first();
-            Permissao::upate([
+            $permissao->update([
                 'nome' => 'usuario_adicionar',
                 'descricao' => 'adicionar usuarios'
             ]);
         }
 
-        if(Permissao::where('nome', '=', 'usuario_editar')->count()){
+        if(!Permissao::where('nome', '=', 'usuario_editar')->count()){
             Permissao::create([
                 'nome' => 'usuario_editar',
                 'descricao' => 'Editar usuarios'
@@ -48,13 +48,13 @@ class PermissaoSeeds extends Seeder
         }
         else {
             $permissao = Permissao::where('nome', '=', 'usuario_editar')->first();
-            Permissao::upate([
+            $permissao->update([
                 'nome' => 'usuario_editar',
                 'descricao' => 'Editar usuarios'
             ]);
         }
 
-        if(Permissao::where('nome', '=', 'usuario_deletar')->count()){
+        if(!Permissao::where('nome', '=', 'usuario_deletar')->count()){
             Permissao::create([
                 'nome' => 'usuario_deletar',
                 'descricao' => 'deletar usuarios'
@@ -62,7 +62,7 @@ class PermissaoSeeds extends Seeder
         }
         else {
             $permissao = Permissao::where('nome', '=', 'usuario_deletar')->first();
-            Permissao::upate([
+            $permissao->update([
                 'nome' => 'usuario_deletar',
                 'descricao' => 'deletar usuarios'
             ]);
