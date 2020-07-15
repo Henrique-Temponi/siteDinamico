@@ -7,6 +7,7 @@ use App\Papel;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Session;
 
 class UsuarioController extends Controller
@@ -45,6 +46,14 @@ class UsuarioController extends Controller
 
     public function index()
     {
+
+        // if(Gate::allows('listar-usuarios', true)){
+        //     dd('sim');
+        // }
+        // else {
+        //     dd('nao');
+        // }
+
         $usuarios = User::all();
         return view('admin.usuarios.index', compact('usuarios'));
     }
