@@ -2,18 +2,18 @@
     <form action="{{ route('site.busca') }}">
         <div class="input-field col s6 m4">
             <select name="status">
-                <option value="todos">Aluga e Vende</option>
-                <option value="aluga">Aluga</option>
-                <option value="vende">Vende</option>
+                <option value="todos"{{ isset($busca['status']) && $busca['status'] == 'todos' ? 'selected' : '' }}>Aluga e Vende</option>
+                <option value="aluga" {{ isset($busca['status']) && $busca['status'] == 'aluga' ? 'selected' : '' }}>Aluga</option>
+                <option value="vende" {{ isset($busca['status']) && $busca['status'] == 'vende' ? 'selected' : '' }}>Vende</option>
             </select>
             <label for="">Status</label>
         </div>
         <div class="input-field col s6 m4">
             <select name="tipo_id">
-                <option value="todos">Todos os tipos</option>
+                <option value="todos" {{ isset($busca['tipo_id']) && $busca['tipo_id'] == 'todos' ? 'selected' : '' }} >Todos os tipos</option>
                 
                 @foreach($tipos as $tipo)
-                    <option value="{{ $tipo->id }}">{{ $tipo->titulo }}</option>
+                    <option value="{{ $tipo->id }}" {{ $busca['tipo_id'] == $tipo->id ? 'selected' : '' }}>{{ $tipo->titulo }}</option>
                 @endforeach
 
             </select>
@@ -21,10 +21,10 @@
         </div>
         <div class="input-field col s6 m4">
             <select name="cidade_id">
-                <option value="todos">Todas as cidades</option>
+                <option value="todos" {{ isset($busca['cidade_id']) && $busca['cidade_id'] == 'todos' ? 'selected' : '' }}>Todas as cidades</option>
 
                 @foreach($cidades as $cidade)
-                    <option value="{{ $cidade->id }}">{{ $cidade->nome }}</option>
+                    <option value="{{ $cidade->id }}" {{ isset($busca['cidade_id']) && $busca['cidade_id'] ==  $cidade->id ? 'selected' : '' }} >{{ $cidade->nome }}</option>
                 @endforeach
 
             </select>
@@ -32,19 +32,19 @@
         </div>
         <div class="input-field col s6 m3">
             <select name="dormitorios">
-                <option value="todos">Todos os dormitorios</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">Mais</option>
+                <option value="0" {{ isset($busca['dormitorios']) && $busca['dormitorios'] == 'todos' ? 'selected' : '' }}>Todos os dormitorios</option>
+                <option value="1"{{ isset($busca['dormitorios']) && $busca['dormitorios'] == '1' ? 'selected' : '' }} >1</option>
+                <option value="2"{{ isset($busca['dormitorios']) && $busca['dormitorios'] == '2' ? 'selected' : '' }} >2</option>
+                <option value="3"{{ isset($busca['dormitorios']) && $busca['dormitorios'] == '3' ? 'selected' : '' }} >Mais</option>
             </select>
             <label for="">Dormitorio</label>
         </div>
         <div class="input-field col s12 m4">
             <select name="valor">
-                <option value="todos">Todos os valores</option>
-                <option value="1">Ate R$ 500</option>
-                <option value="2">R$ 500 a 1000</option>
-                <option value="3">Mais de R$ 1000</option>
+                <option value="0" {{ isset($busca['valor']) && $busca['valor'] == 'todos' ? 'selected' : '' }}>Todos os valores</option>
+                <option value="1" {{ isset($busca['valor']) && $busca['valor'] == '1' ? 'selected' : '' }} >Ate R$ 500</option>
+                <option value="2" {{ isset($busca['valor']) && $busca['valor'] == '2' ? 'selected' : '' }} >R$ 500 a 1000</option>
+                <option value="3" {{ isset($busca['valor']) && $busca['valor'] == '3' ? 'selected' : '' }} >Mais de R$ 1000</option>
             </select>
             <label for="">Valor</label>
         </div>
