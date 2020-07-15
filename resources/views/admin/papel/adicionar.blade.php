@@ -11,7 +11,7 @@
             <div class="col s12">
                 <a href="{{ route('admin.principal') }}" class="breadcrumb">Incio</a>
                 <a href="{{ route('admin.papel') }}" class="breadcrumb">Lista de Papeis</a>
-                <a class="breadcrumb">Adicionar Cidades</a>
+                <a class="breadcrumb">Adicionar Papel</a>
             </div>
             </div>
         </nav>
