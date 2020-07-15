@@ -39,6 +39,11 @@ Route::get('/imovel/{id}/{titulo?}', [
     'uses' => 'Site\ImovelController@index'
 ]);
 
+Route::get('/busca', [
+    'as' => 'site.busca',
+    'uses' => 'Site\HomeController@busca'
+]);
+
 Route::get('/admin/login', [
     'as' => 'admin.login',
     function(){
