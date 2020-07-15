@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Papel;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -111,5 +112,33 @@ class UsuarioController extends Controller
         ]);
 
         return redirect()->route('admin.usuarios');
+    }
+
+    public function papel($id)
+    {
+        $usuario = User::find($id);
+        $papel = Papel::all();
+
+        return view('admin.usuarios.papel', compact('usuario', 'papel'));
+    }
+
+    public function salarPapel(Request $request, $id)
+    {
+        $usuario = User::find($id);
+        $papel = Papel::find($request->papel_id);
+
+        $usuario->adicionaPapel($papel);
+
+        return redirect()->back();
+    }
+
+    public function removerPapel($id, $papel_id)
+    {
+        $usuario = User::find($id);
+        $papel = Papel::find($papel_id);
+
+        $usuario->adicionaPapel($papel);
+
+        return redirect()->back();
     }
 }
