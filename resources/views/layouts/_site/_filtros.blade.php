@@ -13,7 +13,7 @@
                 <option value="todos" {{ isset($busca['tipo_id']) && $busca['tipo_id'] == 'todos' ? 'selected' : '' }} >Todos os tipos</option>
                 
                 @foreach($tipos as $tipo)
-                    <option value="{{ $tipo->id }}" {{ $busca['tipo_id'] == $tipo->id ? 'selected' : '' }}>{{ $tipo->titulo }}</option>
+                    <option value="{{ $tipo->id }}" {{ isset($busca['tipo_id']) && $busca['tipo_id'] == $tipo->id ? 'selected' : '' }}>{{ $tipo->titulo }}</option>
                 @endforeach
 
             </select>
