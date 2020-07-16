@@ -47,15 +47,16 @@ class UsuarioController extends Controller
     public function index()
     {
 
-        // if(Gate::allows('listar-usuarios', true)){
-        //     dd('sim');
-        // }
-        // else {
-        //     dd('nao');
-        // }
+        if(Gate::allows('usuario_listar')){
+            
+            $usuarios = User::all();
+            return view('admin.usuarios.index', compact('usuarios'));
+        }
+        else {
+            
+            return view('admin.principal');
+        }
 
-        $usuarios = User::all();
-        return view('admin.usuarios.index', compact('usuarios'));
     }
 
     public function adicionar()

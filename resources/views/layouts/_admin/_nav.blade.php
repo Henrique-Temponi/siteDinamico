@@ -19,7 +19,9 @@
                     <ul id="dropdown1" class="dropdown-content">
                         <li><a href="#!">{{ Auth::user()->name }}</a></li>
                         <li><a href="{{ route('admin.slides') }}">Slides</a></li>
+                        @can('usuario_listar')
                         <li><a href="{{ route('admin.usuarios') }}">Usuarios</a></li>
+                        @endcan
                         <li><a href="{{ route('admin.papel') }}">Papel</a></li>
                         <li><a href="{{ route('admin.paginas') }}">Paginas</a></li>
                         <li><a href="{{ route('admin.tipos') }}">Tipos</a></li>

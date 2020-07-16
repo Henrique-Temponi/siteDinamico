@@ -68,7 +68,6 @@ class PapelController extends Controller
         $papel = Papel::find($id);
         $permissao = Permissao::all();
 
-        // dd($permissao);
 
         return view('admin.papel.permissao', compact('papel', 'permissao'));
     }
